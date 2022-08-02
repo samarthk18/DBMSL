@@ -26,3 +26,32 @@ SELECT MIN(Salary) from Employeetable;
 SELECT Eid,Ename,Address,Salary,Comission
 from Employeetable
 Order by Salary ASC;
+
+SELECT Ename
+from Employeetable
+where address in("Pune","Nashik");
+
+SELECT Ename from Employeetable
+where Comission=0;
+
+Update Employeetable set Address="Nashik" where Ename="Amit";
+
+SELECT Eid,Ename,Address,Salary,Comission
+from Employeetable
+Where Ename like 'A%';
+
+Select Count(Ename) from Employeetable where address="Mumbai";
+
+Select Address,Count(Ename) from Employeetable group by address;
+
+Select Address from Employeetable
+UNION 
+Select Addr from Project_table;
+
+Select Address,min(Salary) from Employeetable group by address;
+
+Select Address,max(Salary) from Employeetable group by address having max(salary)>26000;
+
+Delete from Employeetable where Salary>30000;
+
+Select * from Employeetable;
